@@ -1,0 +1,59 @@
+# Params
+# Experimental Params
+run_params:
+  fresh_posterior: True    # Create new posterior using SBI
+  fresh_trial_data: True   # Create new trial dataset
+  fresh_fitting: True      # Perform inference on all trials in dataset
+  fresh_validation: True    # Perform validation on samples drawn from prior
+  saving: True              # Save output to unique folder
+  note: "First Run"         # Add a note to be used as a note for save folder
+
+# SBI Parameters
+sbi_params:
+  sbi_seed: 11
+  prior_bounds_std: [0, 40.0] # Bounds I_sigma for prior
+  prior_bounds_mu: [-2, 2]    # Bounds I_mu for prior
+  prior_nr_rounds: 3          # Number of iterations for prior restriction
+  prior_nr_sims: 5_000        # Number of simulations per round
+  nr_train_sims: 150_000      # Number of simulations for training data generation
+  nr_workers: -1              # Number of cores used (-1 for max)
+  validation_samples: 30_000   # Number of samples drawn from prior for validation
+  nr_posterior_samples: 1000  # Number of posterior samples drawn for each inference
+
+# Simulation Parameters
+sim_params:
+  mu_I: None                  # Don't touch
+  std_I: None                 # Don't touch
+  dt_noise: 0.1               # Noise timescale
+  sim_res: 0.1                # Temporal resolution of simulation
+  simtime: 1500               # Simulation time (also impacts length of trials from data)
+  dry_simtime: 700            # Simulation time before recording (for convergence)
+  numpy_seed: 70
+
+# Real Data Parameters
+data_params:
+  area: None                         # Don't touch
+  dataset: 'ChangeDetectionConflict' # Don't touch
+  skip_transient: 200                # Length of transient period (excluded)
+  min_fr_in_trial: 5                 # Minimum number of spikes to be included in dataset
+  max_fr_in_trial: 50                # Maximum number of spikes to be included in dataset
+  areas_to_fit: ['PPC']              # Don't touch
+
+# Neuron Parameter
+neuron_params:
+  C_m: 1.0          # Membrane capacity [pF]
+  t_ref: 0.1        # Duration of refractory period [ms]
+  V_reset: -70.0    # Reset value for membrane potential (V_m) after spike
+  tau_m: 20.0       # Membrane timeconstant (ms)
+  V_th: -55.0       # Membrane threshold (mV)
+  E_L: -70.0        # Leak potential (mV, should be same as V_reset)
+
+# Plotting parameters
+plot_params:
+  show_figures: True          # plt.show() figures after plotting
+  trial_to_plot: 8            # Trial to plot for Fig2
+  analysis_min_spikes: 15     # Minimum number of spikes for trial inclusion
+  analysis_max_spikes: 75     # Maximum number of spikes for trial inclusion
+  analysis_burst_cutoff: 0.5  # Upper bound for burstiness ratio
+  dpi: 100                    # Resolution of figures
+  fig_format: '.pdf'          # Figure file type (.svg/.pdf/.png)
