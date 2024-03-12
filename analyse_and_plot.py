@@ -857,6 +857,10 @@ def save_data_for_stats_analysis(df, data_folder):
     df_catch = df[no_mix & catch & no_response]
     df_catch.to_csv(data_folder + '/catch_data.csv')
 
+    nr_analysis = len(df_analysis)
+    nr_catch = len(df_catch)
+    print(f'{nr_analysis + nr_catch} trials included in final analysis')
+
 
 def analyse_and_plot(sbi_params, sim_params, neuron_params,
                      data_params, plot_params, data_folder, plot_folder):
@@ -902,7 +906,6 @@ def analyse_and_plot(sbi_params, sim_params, neuron_params,
 
     # Figure 4: Results
     plot_results(plot_params, df, plot_folder)
-
     if plot_params['show_figures']:
         plt.show()
 
@@ -918,7 +921,7 @@ if __name__ == '__main__':
     plot_folder = os.path.join(cwd, 'figures')
 
     if not os.path.isdir(plot_folder):
-        os.mkdir(figure_folder)
+        os.mkdir(plot_folder)
 
     # General Params
     with open(data_folder + '/config.yml', 'r') as f:

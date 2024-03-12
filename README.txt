@@ -2,12 +2,9 @@
 ===========================
 CONFIGURING THE ENVIRONMENT
 ===========================
-Setup a new evironment in Python 3.8.
+Setup a new environment in Python 3.8.
 Install NEST 3.2. For info: https://nest-simulator.readthedocs.io/en/stable/installation/conda_forge.html#conda-forge-install
-Install remaining packages via 
-	pip install -r requirements.txt
-
-To run the code you need to install NEST (3.2) in Python 3.8.
+Install remaining packages via: pip install -r requirements.txt
 
 ====================
 DOWNLOADING THE DATA
