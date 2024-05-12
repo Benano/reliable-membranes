@@ -9,7 +9,7 @@ Install remaining packages via: pip install -r requirements.txt
 ====================
 DOWNLOADING THE DATA
 ====================
-1. Navigate to https://search.kg.ebrains.eu/instances/ba41de6c-1b30-4f48-89c4-a6eb47b2c549
+1. Navigate to Ebrains: https://doi.org/10.25493/Q8R8-24V
 2. Go to "Get Data" -> "Browse Files" -> "ChangeDetectionDataset" -> "CHDET"
 3. Download the "ChangeDetectionConflict" folder
 4. Place the zip file into the \recordings folder und unzip.
